@@ -13,6 +13,6 @@ class DownloadMediaController extends Controller
         if($user->can('See attachments')) {
             return $media;
         }
-        return null;
+        return response(null, 403);
     }
 }

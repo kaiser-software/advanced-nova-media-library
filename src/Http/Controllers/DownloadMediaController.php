@@ -10,7 +10,7 @@ class DownloadMediaController extends Controller
     public function show(Request $request, Media $media)
     {
         $user = $request->user();
-        if($user->can('See attachments')) {
+        if($user->can('View attachments')) {
             return $media;
         }
         return response(null, 403);
